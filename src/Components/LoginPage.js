@@ -9,14 +9,14 @@ const LoginPage = () => {
 
                     <div className='h-[80vh] p-4'>
                         <div className='bg-[#F6F6F6] rounded-sm text-center items-center'>
-                            <img className='w-full rounded-md' src={authImg} alt='Authentification Image'/>
+                            <img className='w-full rounded-md' src={authImg} alt='AuthentificationImg'/>
                         </div>
                     </div>
 
                     <div className='mb-[200px]'>
                         <div className="text-center">
-                            <h1 className='text-[#003667] text-[32px] font-bold'>Log-In</h1>
-                            <p className='text-[#D0D700]'>Enjoy Your Student's Life</p>
+                            <h1 className='text-midnight-blue-900 text-[32px] font-bold'>Log-In</h1>
+                            <p className='text-barberry-600'>Enjoy Your Student's Life</p>
                         </div>
                             
                         <div className='px-[50px]'>
@@ -30,7 +30,7 @@ const LoginPage = () => {
                                     <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
                                 </div>
                                 <div className="mt-10">
-                                    <button type="button" class="text-white hover:text-[#D0D700] ease-in-out duration-300 bg-[#003667] hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-[#D0D700] font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-[#003667] dark:focus:ring-[#D0D700]">Log in</button>
+                                    <button type="button" class="text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">Log in</button>
                                 </div>
                             </form>
                         </div>
