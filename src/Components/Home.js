@@ -2,9 +2,9 @@ import React from "react";
 import homePic from '../assets/home.png';
 import logoUir from '../assets/uir-clubs.png';
 import homePicLand from '../assets/idea-pic.png';
+import { Link } from 'react-router-dom';
 
 import CardHover from "./CardHover";
-import Footer from "./Footer";
 
 
 
@@ -21,7 +21,9 @@ const Home = () =>
                         always something happening at UIR. Join us and discover the many benefits of being a part of our vibrant community.
                     </p>
                     <div className="flex justify-center items-center">
-                        <button type="button" class="w-[35%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">About Us</button>
+                        <Link to='/about' className="sm:w-[100%] w-[50%] flex justify-center items-center">
+                            <button type="button" class="w-[35%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">About Us</button>
+                        </Link>
                     </div>
                 </div>
             </div>
