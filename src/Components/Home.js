@@ -48,9 +48,13 @@ const Home = () =>
                             You can also create your own club and invite others to join in on the fun. Don't miss out on the chance to expand your horizons and make new friends. 
                             Join or create a club today!
                         </p>
-                        <div className='flex justify-between'>
-                            <button type="button" class="w-[35%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">Create a Club</button>
-                            <button type="button" class="w-[35%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">Join a Club</button>
+                        <div className='flex justify-between '>
+                            <Link to='' className="max-w-lg">
+                                <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">Create a Club</button>
+                            </Link>
+                            <Link to='' className="max-w-lg">
+                                <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">Join a Club</button>
+                            </Link>
                         </div>
                     </div>
                 </div>

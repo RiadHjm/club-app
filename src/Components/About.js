@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import aboutPic from '../assets/about-pic.png';
 import rightIcon from '../assets/right-icon.png';
 import leftIcon from '../assets/left-icon.png';
 import { Link } from "react-router-dom";
 
 const About = () => {
+    const [isHovered, setIsHovered] = useState(false);
     return (
         <div className='flex items-center lg:h-[100vh] justify-center sm:mt-[100px] m-[50px] lg:mt-11'>
             <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-[200px] ">
