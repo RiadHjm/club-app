@@ -7,7 +7,7 @@ import LoginPage from './Components/LoginPage';
 import ClubProfile from './Components/ClubProfile';
 import ClubCreation from './Components/ClubCreation';
 import ClubJoin from './Components/ClubJoin';
-import requireAuth from './Components/requireAuth';
+import Clubs from './Components/Clubs';
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
         <Route path={'about'} element={<About />} />
         <Route path={'club-profile'} element={<ClubProfile />} />
         <Route path={'club-creation'} element={<ClubCreation />} />
-        <Route path={'club-join'} element={<ClubJoin />} onEnter={requireAuth}/>
+        <Route path={'club-join'} element={<ClubJoin />}/>
+        <Route path={'clubs'} element={<Clubs />}/>
       </Route>
       <Route path={'login'} element={<LoginPage />} />
     </Routes>

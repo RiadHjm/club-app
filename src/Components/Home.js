@@ -3,7 +3,6 @@ import homePic from '../assets/home.png';
 import logoUir from '../assets/uir-clubs.png';
 import homePicLand from '../assets/idea-pic.png';
 import { Link } from 'react-router-dom';
-
 import CardHover from "./CardHover";
 
 
@@ -37,7 +36,7 @@ const Home = () =>
                 </div>
             </div>
 
-            <div className='flex items-center justify-center m-[50px] sm:mt-[1000px] lg:mt-[70px]'>
+            <div className='flex items-center justify-center m-[50px] sm:mt-[900px] lg:mt-[70px]'>
                 <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-[200px] ">
                     <img src={homePicLand} className='sm:h-[60vh] h-auto mb-11 lg:mb-0'/>
                     <div className='flex flex-col gap-[50px]'>
@@ -49,11 +48,11 @@ const Home = () =>
                             Join or create a club today!
                         </p>
                         <div className='flex justify-between '>
-                            <Link to='' className="max-w-lg">
-                                <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">Create a Club</button>
+                            <Link to='/clubs' className="max-w-lg">
+                                <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">More About Clubs</button>
                             </Link>
                             <Link to='' className="max-w-lg">
-                                <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">Join a Club</button>
+                                <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">More About Events</button>
                             </Link>
                         </div>
                     </div>
