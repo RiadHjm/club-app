@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Loading from './Loading';
 
- type CommitteeMember = {
+type CommitteeMember = {
     idA: number;
     lastName: string;
     firstName: string;
@@ -50,7 +51,7 @@ type Club = {
 }
 
 const Clubs = () => {
-        
+
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true)
     const [pageNumber, setPageNumber] = useState(0);
@@ -75,7 +76,7 @@ const Clubs = () => {
         fetchClubs();
     }, [pageNumber, pageSize])
     return (
-        <div className='flex flex-col mt-[150px] mb-24'>
+        <div className='flex flex-col mt-[150px] mb-24 gap-20'>
 
             <div className='flex justify-end'>
                 <form className='w-[80vh]'>
@@ -92,8 +93,24 @@ const Clubs = () => {
                 </form>
             </div >
 
-            <div>
-                
+            <div className='flex flex-col justify-center items-center'>
+                {loading ? (
+                    <Loading />
+                ) : (
+                    <ul>
+                        {clubs.map((club) => (
+                            <li key={club.idC}>
+                                <h2>{club.name}</h2>
+                                <p>{club.description}</p>
+                                {/* Render other club information as needed */}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+                <div>
+                    <p>Page Number: {pageNumber}</p>
+                    <p>Page Size: {pageSize}</p>
+                </div>
             </div>
         </div>
     )

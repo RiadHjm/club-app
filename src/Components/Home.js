@@ -40,7 +40,7 @@ const Home = () =>
                 <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-[200px] ">
                     <img src={homePicLand} className='sm:h-[60vh] h-auto mb-11 lg:mb-0'/>
                     <div className='flex flex-col gap-[50px]'>
-                        <h1 className='text-[40px] text-gray-800 flex justify-center items-center'>Wanna Join a Club Aswell ?!</h1>
+                        <h1 className='text-[40px] text-gray-800 flex justify-center items-center'>Wanna Join a Club As well ?!</h1>
                         <p className='text-[25px] text-gray-800'>
                             Join the fun and excitement of belonging to a club! Whether you're looking for a new hobby or simply want to meet like-minded individuals, 
                             there's a club for you. With a wide range of interests and activities, clubs are a great way to connect with others and pursue your passions. 
