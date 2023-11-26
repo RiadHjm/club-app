@@ -1,6 +1,7 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Loading from './Loading';
 
 type CommitteeMember = {
@@ -55,7 +56,9 @@ const Clubs = () => {
     const [clubs, setClubs] = useState([]);
     const [loading, setLoading] = useState(true)
     const [pageNumber, setPageNumber] = useState(0);
-    const [pageSize, setPageSize] = useState(25);
+    const [pageSize, setPageSize] = useState(10);
+    const [page, setPage] = useState(0);
+    const [maxPages, setMaxPages] = useState(1);
 
     const fetchClubs = async () => {
         try {
@@ -64,9 +67,14 @@ const Clubs = () => {
                     pageNumber: pageNumber,
                     pageSize: pageSize,
                 },
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             });
             setClubs(response.data);
             setLoading(false);
+            setMaxPages(response.headers.get('total-pages'));
+            console.log(response.headers.get('total-pages'));
         } catch (error) {
             console.log(error);
         }
@@ -97,15 +105,16 @@ const Clubs = () => {
                 {loading ? (
                     <Loading />
                 ) : (
-                    <ul>
+                    <div className='grid grid-cols-2 md:grid-cols-5 gap-4 m-11'>
                         {clubs.map((club) => (
-                            <li key={club.idC}>
-                                <h2>{club.name}</h2>
-                                <p>{club.description}</p>
-                                {/* Render other club information as needed */}
-                            </li>
+                            <div key={club.idC} className='border-[2px] border-midnight-blue-900 mb-10 p-9 rounded-3xl'>
+                                <Link to='/'>
+                                    <h2 className='text-midnight-blue-900 hover:text-barberry-600 cursor-pointer text-[30px] line-clamp-2 underline mb-6'>{club.name}</h2>
+                                </Link>
+                                <p>{club.description}</p>   
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 )}
                 <div>
                     <p>Page Number: {pageNumber}</p>
