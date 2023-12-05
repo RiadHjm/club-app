@@ -3,54 +3,13 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loading from './Loading';
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
-type CommitteeMember = {
-    idA: number;
-    lastName: string;
-    firstName: string;
-    email: string;
-    roles: string[];
-    studentId: string;
-    major: string;
-    level: string;
-}
+import clubPic from '../assets/club-pic.png';
 
-type Supervisor = {
-    idA: number;
-    lastName: string;
-    firstName: string;
-    email: string;
-    roles: string[];
-}
+import { Col, Row } from 'antd';
 
-type Document = {
-    idDocument: number;
-    name: string;
-    type: string;
-    size: number;
-    dateUpload: string;
-}
-
-type Budget = {
-    idBudget: number;
-    budget_initial: number;
-    used_budget: number;
-    budgetType: string;
-}
-
-type Club = {
-    idC: number;
-    name: string;
-    committeeMembers: CommitteeMember[];
-    description: string;
-    type: string;
-    status: string;
-    featured: boolean;
-    supervisor: Supervisor;
-    documents: Document[];
-    budgets: Budget[];
-}
+import { Card } from 'antd';
+const { Meta } = Card;
 
 const Clubs = () => {
 
@@ -76,7 +35,15 @@ const Clubs = () => {
 
     const fetchClubs = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/v1/clubs', {
+            let url;
+            if (searchTerm) {
+                // Use search endpoint
+                url = 'http://localhost:8080/api/v1/clubs';
+            } else {
+                // Use detailed endpoint
+                url = 'http://localhost:8080/api/v1/clubs/detailed';
+            }
+            const response = await axios.get(url, {
                 params: {
                     pageNumber: pageNumber,
                     pageSize: pageSize,
@@ -102,7 +69,50 @@ const Clubs = () => {
 
     return (
         <div className='flex flex-col mt-[150px] mb-24 gap-20'>
+            <div className='flex relative'>
+                <div className='flex gap-36 m-16 mt-1 sm:flex-col lg:flex-row justify-center items-center relative'>
+                    <img src={clubPic} className='lg:w-[40%] ml-10 z-10' />
+                    <div className='flex flex-col justify-center items-center mt-[-150px]'>
+                        <h1 className='text-[40px] text-midnight-blue-900 flex justify-center items-center'>Explore Our Vibrant Campus Clubs</h1>
+                        <p className='text-[25px] text-gray-800'>
+                            Discover a diverse array of student clubs that fuel passion, foster connections, and enrich your university experience. 
+                            From academic pursuits to cultural celebrations, find the perfect club to enhance your journey at our dynamic campus. 
+                            Dive into a world of opportunities and community engagement – your adventure starts here!
+                        </p>
+                    </div>
+                </div>
+                <div className='w-[600px] h-[600px] bg-barberry-600 rounded-full absolute opacity-60 flex justify-start z-0'></div>
+                <div className='w-[150px] h-[150px] bg-barberry-600 rounded-full absolute opacity-70 flex justify-start z-0 ml-[450px]'></div>
+                <div className='w-[300px] h-[300px] bg-barberry-600 rounded-full absolute opacity-50 flex justify-start z-0 mt-[420px] ml-24'></div>
+            </div>
 
+            <div className='flex flex-col gap-6 bg-gray-100 p-16'>
+                <h1 className='text-[40px] text-midnight-blue-900 flex justify-center items-center'>See what you can do here !</h1>
+                <Row gutter={16}>
+                <Col span={8}>
+                    <Card title="Browse Clubs" bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
+                        Discover Your Tribe: Dive into the rich tapestry of student organizations that our university offers. 
+                        From academic pursuits to shared hobbies, find the perfect community to thrive in. 
+                        Explore diverse interests and join clubs that resonate with your passions.
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card title="Join Clubs " bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
+                        Elevate Your University Journey: Immerse yourself in the vibrant tapestry of campus life by exploring and joining a variety of student clubs. 
+                        Unleash your potential, build lasting connections, and make memories that extend far beyond the classroom.
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card title="View Events" bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
+                        Stay Connected, Stay Informed: Uncover the heart of campus happenings by exploring event details. 
+                        From club meetings to campus-wide festivities, stay informed and engaged. 
+                        Find events that spark your interest and create a calendar filled with exciting experiences.
+                    </Card>
+                </Col>
+            </Row>
+            </div>
+            
+            
             <div className='flex justify-end'>
                 <form className='w-[80vh]'
                     onSubmit={(e) => {
@@ -127,20 +137,29 @@ const Clubs = () => {
                 {loading ? (
                     <Loading />
                 ) : (
-                    <div className='grid grid-cols-2 md:grid-cols-5 gap-4 m-11'>
-                        {clubs.map((club) => (
-                            <div key={club.idC} className='border-[2px] border-midnight-blue-900 mb-10 p-9 rounded-3xl'>
-                                <Link to='/'>
-                                    <h2 className='text-midnight-blue-900 hover:text-barberry-600 cursor-pointer text-[30px] line-clamp-2 underline mb-6'>{club.name}</h2>
-                                </Link>
-                                <p>{club.description}</p>   
+                    <div className='grid grid-cols-2 md:grid-cols-5 gap-8 m-11'>
+                        {clubs.map((clubDetails) => (
+                            // <div key={clubDetails.club.idC} className='border-[2px] border-midnight-blue-900 mb-10 p-9 rounded-3xl'>
+                            //     <Link to='/'>
+                            //         <h2 className='text-midnight-blue-900 hover:text-barberry-600 cursor-pointer text-[30px] line-clamp-2 underline mb-6'>{clubDetails.club.name}</h2>
+                            //     </Link>
+                            //     <p>{clubDetails.club.description}</p>   
+                            // </div>
+                            <div key={clubDetails.club.idC}>
+                                <Card
+                                    hoverable
+                                    style={{ width: 240, height: 360 }}
+                                    loading={loading}
+                                    cover={<img alt="Club Logo" src={clubDetails.logo} className='h-52'/>}
+                                >
+                                    <Meta title={clubDetails.club.name} description={clubDetails.club.description} />
+                                </Card>
                             </div>
                         ))}
                     </div>
                 )}
                 <div>
-                    <p>Page Number: {pageNumber + 1}</p>
-                    <p>Page Size: {pageSize}</p>
+                    <p> <span className='text-barberry-600'> {pageNumber + 1} </span> / {pageSize}</p>
                 </div>
                 
                 <div className="flex justify-center gap-44 mt-4">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import aboutPic from '../assets/about-pic.png';
-import rightIcon from '../assets/right-icon.png';
-import leftIcon from '../assets/left-icon.png';
+import rightIcon from '../assets/right.gif';
+import leftIcon from '../assets/left.gif';
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -20,11 +20,12 @@ const About = () => {
                     </p>
                     <div className='flex items-center justify-between'>
                         <Link to='/'>
-                            <img src={leftIcon} alt='Left Icon'/>
+                            <img src={leftIcon} alt='Left Icon' className="w-16"/>
                         </Link>
-                        <Link to='/club-profile'>
-                            <img src={rightIcon} alt='Right Icon'/>
+                        <Link to='/clubs'>
+                            <img src={rightIcon} alt='Right Icon' className="w-16"/>
                         </Link>
+
                     </div>
                 </div>
             </div>
