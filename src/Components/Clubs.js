@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Loading from './Loading';
 
@@ -71,10 +71,10 @@ const Clubs = () => {
         <div className='flex flex-col mt-[150px] mb-24 gap-20'>
             <div className='flex relative'>
                 <div className='flex gap-36 m-16 mt-1 sm:flex-col lg:flex-row justify-center items-center relative'>
-                    <img src={clubPic} className='lg:w-[40%] ml-10 z-10' />
-                    <div className='flex flex-col justify-center items-center mt-[-150px]'>
-                        <h1 className='text-[40px] text-midnight-blue-900 flex justify-center items-center'>Explore Our Vibrant Campus Clubs</h1>
-                        <p className='text-[25px] text-gray-800'>
+                    <img src={clubPic} className='lg:w-[40%] ml-10 z-10 flex justify-center items-center' />
+                    <div>
+                        <h1 className='text-[40px] text-center text-midnight-blue-900 lg:mt-0 mt-32 flex justify-center items-center'>Explore Our Vibrant Campus Clubs</h1>
+                        <p className='text-[25px] text-gray-800 text-justify'>
                             Discover a diverse array of student clubs that fuel passion, foster connections, and enrich your university experience. 
                             From academic pursuits to cultural celebrations, find the perfect club to enhance your journey at our dynamic campus. 
                             Dive into a world of opportunities and community engagement – your adventure starts here!
@@ -83,37 +83,38 @@ const Clubs = () => {
                 </div>
                 <div className='w-[600px] h-[600px] bg-barberry-600 rounded-full absolute opacity-60 flex justify-start z-0'></div>
                 <div className='w-[150px] h-[150px] bg-barberry-600 rounded-full absolute opacity-70 flex justify-start z-0 ml-[450px]'></div>
-                <div className='w-[300px] h-[300px] bg-barberry-600 rounded-full absolute opacity-50 flex justify-start z-0 mt-[420px] ml-24'></div>
+                <div className='w-[250px] h-[250px] bg-barberry-600 rounded-full absolute opacity-50 flex justify-start z-0 mt-[420px] ml-24'></div>
             </div>
 
-            <div className='flex flex-col gap-6 bg-gray-100 p-16'>
+            <div className='flex flex-col gap-6 bg-gray-100 p-24 lg:p-16'>
                 <h1 className='text-[40px] text-midnight-blue-900 flex justify-center items-center'>See what you can do here !</h1>
+
                 <Row gutter={16}>
-                <Col span={8}>
-                    <Card title="Browse Clubs" bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
-                        Discover Your Tribe: Dive into the rich tapestry of student organizations that our university offers. 
-                        From academic pursuits to shared hobbies, find the perfect community to thrive in. 
-                        Explore diverse interests and join clubs that resonate with your passions.
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="Join Clubs " bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
-                        Elevate Your University Journey: Immerse yourself in the vibrant tapestry of campus life by exploring and joining a variety of student clubs. 
-                        Unleash your potential, build lasting connections, and make memories that extend far beyond the classroom.
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="View Events" bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
-                        Stay Connected, Stay Informed: Uncover the heart of campus happenings by exploring event details. 
-                        From club meetings to campus-wide festivities, stay informed and engaged. 
-                        Find events that spark your interest and create a calendar filled with exciting experiences.
-                    </Card>
-                </Col>
-            </Row>
+                    <Col span={8}>
+                        <Card title="Browse Clubs" bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
+                            Discover Your Tribe: Dive into the rich tapestry of student organizations that our university offers. 
+                            From academic pursuits to shared hobbies, find the perfect community to thrive in. 
+                            Explore diverse interests and join clubs that resonate with your passions.
+                        </Card>
+                    </Col>
+                    <Col span={8}>
+                        <Card title="Join Clubs " bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
+                            Elevate Your University Journey: Immerse yourself in the vibrant tapestry of campus life by exploring and joining a variety of student clubs. 
+                            Unleash your potential, build lasting connections, and make memories that extend far beyond the classroom.
+                        </Card>
+                    </Col>
+                    <Col span={8}>
+                        <Card title="View Events" bordered={false} className='h-[200px]' headStyle={{ color: '#003667' }} >
+                            Stay Connected, Stay Informed: Uncover the heart of campus happenings by exploring event details. 
+                            From club meetings to campus-wide festivities, stay informed and engaged. 
+                            Find events that spark your interest and create a calendar filled with exciting experiences.
+                        </Card>
+                    </Col>
+                </Row>
             </div>
-            
-            
+            <h1 className='text-center text-4xl text-midnight-blue-900 pointer-events-none'>Looking for a Club ?</h1>
             <div className='flex justify-end'>
+                
                 <form className='w-[80vh]'
                     onSubmit={(e) => {
                         e.preventDefault();

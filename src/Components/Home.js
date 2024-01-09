@@ -51,7 +51,7 @@ const Home = () =>
                             <Link to='/clubs' className="max-w-lg">
                                 <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">More About Clubs</button>
                             </Link>
-                            <Link to='' className="max-w-lg">
+                            <Link to='/events' className="max-w-lg">
                                 <button type="button" class="w-[100%] text-white hover:text-[#D0D700] ease-in-out duration-300 bg-midnight-blue-900 hover:bg-midnight-blue-800 focus:outline-none focus:ring-4 focus:ring-barberry-600 font-medium rounded-full text-sm px-10 py-2.5 text-center mr-2 mb-2 dark:bg-midnight-blue-800 dark:hover:bg-midnight-blue-900 dark:focus:ring-barberry-600">More About Events</button>
                             </Link>
                         </div>
