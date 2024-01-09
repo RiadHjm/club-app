@@ -35,15 +35,7 @@ const Clubs = () => {
 
     const fetchClubs = async () => {
         try {
-            let url;
-            if (searchTerm) {
-                // Use search endpoint
-                url = 'http://localhost:8080/api/v1/clubs';
-            } else {
-                // Use detailed endpoint
-                url = 'http://localhost:8080/api/v1/clubs/detailed';
-            }
-            const response = await axios.get(url, {
+            const response = await axios.get('http://localhost:8080/api/v1/clubs/detailed', {
                 params: {
                     pageNumber: pageNumber,
                     pageSize: pageSize,

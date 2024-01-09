@@ -21,10 +21,11 @@ const Navbar = () => {
                 <Link to='/' className="flex items-center">
                     <img src={logoUir} className="h-14 mr-3" alt="UIR Logo" />
                 </Link>
-                <div className="flex md:order-2">
+                <div className="flex gap-7 md:order-2">
                     <button type="button" 
                             onClick={showBanner ? handleBannerClose : handleBannerClick}
                             className="text-midnight-blue-900 bg-barberry-600 duration-300 hover:text-midnight-blue-700 hover:bg-barberry-700 focus:ring-4 focus:outline-none focus:text-white font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-barberry-600 dark:hover:bg-barberry-700 dark:focus:text-white">Contact Us</button>
+                    <a href="https://www.google.com/" target="_BLANK" className="text-midnight-blue-900 bg-barberry-600 duration-300 hover:text-midnight-blue-700 hover:bg-barberry-700 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-barberry-600 dark:hover:bg-barberry-700 dark:focus:text-white">Log-in</a>
                     <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-barberry-600 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
                         <span className="sr-only">Open main menu</span>
                         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
